@@ -10,7 +10,7 @@
         button { padding: 10px 20px; margin: 5px; cursor: pointer; }
     </style>
 </head>
-<body>
+<body style="background-color: dimgrey;">
     <h1>Clicker Game</h1>
     <p>Roll dice to collect eggs, chickens, and hens. Reach 12 hens to win!</p>
     <div class="resources">
@@ -18,9 +18,9 @@
         <p>Chickens: <span id="chickens">0</span></p>
         <p>Hens: <span id="hens">0</span></p>
     </div>
-    <button onclick="rollDice()">Roll Dice</button>
-    <button onclick="convertEggs()">Convert 3 Eggs → 1 Chicken</button>
-    <button onclick="convertChickens()">Convert 3 Chickens → 1 Hen</button>
+    <button style="background-color: darkgrey;" onclick="rollDice()">Roll Dice</button>
+    <button style="background-color: darkgrey;" onclick="convertEggs()">Convert 3 Eggs → 1 Chicken</button>
+    <button style="background-color: darkgrey;" onclick="convertChickens()">Convert 3 Chickens → 1 Hen</button>
     <p id="message"></p>
     <script>
         let eggs = parseInt(localStorage.getItem('eggs')) || 0;
