@@ -15,13 +15,13 @@
       display: flex;
       flex-direction: column;  /* Stack elements vertically */
       justify-content: flex-start;  /* Content aligned to the top */
-      align-items: center;  /* Center horizontally */
       overflow-y: auto; /* Allow scrolling */
     }
-    p {
+    .vrch {
       color: white;  /* Make the text white for visibility */
       margin-top: 20px; /* Add a little margin on top */
       font-size: 35px;
+      align-self: center;
     }
     .hod {
       position: fixed; /* Fixed positioning keeps it visible */
@@ -34,6 +34,7 @@
       border-radius: 10px;
       cursor: pointer;
       font-size: 35px;
+      
     }
     .hod:hover {
       background-color: #ccc; /* Darker color on hover */
@@ -42,12 +43,33 @@
       opacity: 0.8;
     }
 
+    .veci{
+      margin-left: 15px;
+      text-align:left;
+      color: white;
+      font-size: 22px;
+      
+
+    }
+
   </style>
 </head>
 <body>
-  <p>Nasbírej 12 slepic</p>
+  <p class="vrch">Nasbírej 12 slepic</p>
+
   <div class="veci">
-    <!-- Your content goes here -->
+    <p>Vajca <span id="vajca">0</span></p>
+
+
+  <script>
+    let vajca = parseInt(localStorage.getItem('vajca')) || 0;
+    let kurata = parseInt(localStorage.getItem('kurata')) || 0;
+    let slepice = parseInt(localStorage.getItem('slepice')) ||0;
+
+  </script>
+
+
+  <!-- Your content goes here -->
   </div>
   <button class="hod">Hoď</button> <!-- Fixed positioned button -->
 </body>
