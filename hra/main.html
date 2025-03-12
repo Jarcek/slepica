@@ -58,7 +58,9 @@
   <p class="vrch">Nasbírej 12 slepic</p>
 
   <div class="veci">
-    <p>Vajca <span id="vajca">0</span></p>
+    <p>Vajca: <span id="vajca">0</span></p>
+    <p>Kuřata: <span id="kurata">0</span></p>
+    <p>Slepice: <span id="slepice">0</span></p>
 
 
   <script>
@@ -66,11 +68,48 @@
     let kurata = parseInt(localStorage.getItem('kurata')) || 0;
     let slepice = parseInt(localStorage.getItem('slepice')) ||0;
 
+    function updateDisplay(){
+      document.getElementById('vajca').textContent = vajca;
+      document.getElementById('kurata').textContent = kurata;
+      document.getElementById('slepice').textContent = slepice;
+
+      localStorage.setItem('vajca', vajca);
+      localStorage.setItem('kurata', kurata);
+      localStorage.setItem('slepice', slepice);
+    }
+
+    function hod_kostkami(){
+      let die1 = Math.floor(Math.random() * 6) + 1;
+      let die2 = Math.floor(Math.random() * 6) + 1;
+            
+      if (die1 <= 3) vajca++;
+      else if (die1 <= 5) kurata++;
+      else slepice++;
+      
+      if (die2 <= 3) vajca++;
+      else if (die2 <= 5) kurata++;
+      else slepice++;
+
+      if (slepice>=12){
+        alert("Vyhrál jsi!");
+        resetGame();
+      }
+
+      updateDisplay();
+    }
+
+    function resetGame(){
+      vajca=0;
+      kurata=0;
+      slepice=0;
+      updateDisplay();
+    }
+  updateDisplay();
   </script>
 
 
   <!-- Your content goes here -->
   </div>
-  <button class="hod">Hoď</button> <!-- Fixed positioned button -->
+  <button class="hod" onclick="hod_kostkami()">Hoď</button> <!-- Fixed positioned button -->
 </body>
 </html>
