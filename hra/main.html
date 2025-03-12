@@ -5,13 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Slepicarna</title>
   <style>
+    html, body {
+      margin: 0;           /* Remove default margin */
+      padding: 0;          /* Remove default padding */
+      height: 100%;        /* Ensure both html and body take full height */
+      overflow: hidden;    /* Prevent any scrolling */
+    }
     body {
       background-color: dimgray;
       display: flex;
       justify-content: center;  /* Horizontally centers */
-      align-items:top;      /* Vertically centers */
+      align-items: top;      /* Vertically centers */
       height: 100vh;            /* Full viewport height */
-      margin: 0;                /* Remove default margin */
     }
     p {
       color: white;  /* Make the text white for better visibility */
