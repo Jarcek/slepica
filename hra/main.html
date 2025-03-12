@@ -6,42 +6,43 @@
   <title>Slepicarna</title>
   <style>
     html, body {
-      margin: 0;           /* Remove default margin */
-      padding: 0;          /* Remove default padding */
-      height: 100%;        /* Ensure both html and body take full height */
+      margin: 0;
+      padding: 0;
+      height: 100%; /* Full height of the viewport */
     }
     body {
       background-color: dimgray;
       display: flex;
       flex-direction: column;  /* Stack elements vertically */
-      justify-content: flex-start;  /* Align elements to the top */
-      align-items: center;      /* Center horizontally */
-      height: 100vh;            /* Full viewport height */
-      font-size: 185%;
+      justify-content: flex-start;  /* Content aligned to the top */
+      align-items: center;  /* Center horizontally */
+      overflow-y: auto; /* Allow scrolling */
     }
     p {
-      color: white;  /* Make the text white for better visibility */
+      color: white;  /* Make the text white for visibility */
+      margin-top: 20px; /* Add a little margin on top */
     }
     .hod {
-      position: absolute;
-      bottom: 20%; /* Position 20% from the bottom */
+      position: fixed; /* Fixed positioning keeps it visible */
+      bottom: 20px; /* 20px from the bottom */
       left: 50%;
-      transform: translateX(-50%);
+      transform: translateX(-50%); /* Horizontally center */
       background-color: lightgray;
-      padding: 15px 20px;
+      padding: 10px 20px;
       border: none;
-      border-radius: 13px;
+      border-radius: 5px;
       cursor: pointer;
     }
     .hod:hover {
-      background-color: #ccc; /* Darker on hover */
+      background-color: #ccc; /* Darker color on hover */
     }
   </style>
 </head>
 <body>
   <p>Nasbírej 12 slepic</p>
   <div class="veci">
-    <button class="hod">Hoď</button>
+    <!-- Your content goes here -->
   </div>
+  <button class="hod">Hoď</button> <!-- Fixed positioned button -->
 </body>
 </html>
